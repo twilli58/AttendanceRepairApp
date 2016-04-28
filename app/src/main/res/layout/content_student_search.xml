@@ -63,10 +63,10 @@
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:id="@+id/linearLayout3"
-        android:layout_above="@+id/linearLayout4"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="23dp">
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/studentTextView7"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
 
         <EditText
             android:layout_width="wrap_content"
@@ -92,7 +92,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Student"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:id="@+id/studentTextView7"
         android:layout_below="@+id/radioGroup"
         android:layout_centerHorizontal="true" />
@@ -103,7 +103,8 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Course"
         android:id="@+id/courseTextView7"
-        android:layout_alignTop="@+id/linearLayout4"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/linearLayout3"
         android:layout_alignRight="@+id/studentTextView7"
         android:layout_alignEnd="@+id/studentTextView7" />
 
@@ -120,7 +121,7 @@
         <EditText
             android:layout_width="178dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="8dp"
             android:layout_marginLeft="80dp"
             android:inputType="textPersonName"
             android:ems="10"
