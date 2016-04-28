@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/useroption"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="edu.westga.tamikowilliamsattendancerepairapp.UIActivity.StudentSearchActivity">
+
+
+    <Button
+        style="@style/Platform.ThemeOverlay.AppCompat.Dark"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="Show Stats"
+        android:id="@+id/searchBtn"
+        android:textSize="15dp"
+        android:background="#8a9c1a"
+        android:textColor="#ffffff"
+        android:onClick="clickGo"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/textView7"
+        android:layout_alignStart="@+id/textView7" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:id="@+id/radioGroup"
+        android:layout_toRightOf="@+id/courseMonthChkBox"
+        android:layout_toEndOf="@+id/courseMonthChkBox">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="By Student"
+            android:id="@+id/searchStudentRBtn"
+            android:checked="false" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="By Course"
+            android:id="@+id/searchCourseRBtn"
+            android:checked="false" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="By Both"
+            android:id="@+id/searchBothRBtn"
+            android:checked="false" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:id="@+id/linearLayout3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true">
+
+    </LinearLayout>
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Course:"
+        android:id="@+id/courseTextView7"
+          android:layout_centerVertical="true"
+          android:layout_toLeftOf="@+id/radioGroup"
+          android:layout_toStartOf="@+id/radioGroup" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:id="@+id/linearLayout4"
+        android:layout_above="@+id/courseNameStatsEditTxt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <EditText
+            android:layout_width="168dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_marginLeft="80dp"
+            android:id="@+id/studentLastStatsEditTxt"
+            android:hint="Last"
+            android:layout_alignTop="@+id/studentFirstStatsEditTxt"
+            android:layout_alignRight="@+id/courseNameStatsEditTxt"
+            android:layout_alignEnd="@+id/courseNameStatsEditTxt" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/studentFirstStatsEditTxt"
+            android:hint="First"
+            android:layout_above="@+id/courseMonthChkBox"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </LinearLayout>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Filter By Month"
+        android:id="@+id/courseMonthChkBox"
+        android:checked="false"
+        android:layout_alignBottom="@+id/spinnerMonth3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="31dp"
+        android:layout_marginStart="31dp" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerMonth3"
+        android:spinnerMode="dropdown"
+        android:layout_above="@+id/searchBtn"
+        android:layout_marginBottom="26dp"
+        android:layout_alignLeft="@+id/courseNameStatsEditTxt"
+        android:layout_alignStart="@+id/courseNameStatsEditTxt" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Search By"
+        android:id="@+id/textView7"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffff" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/courseNameStatsEditTxt"
+        android:hint="Name"
+        android:layout_weight="1"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
+

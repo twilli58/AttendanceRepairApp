@@ -5,13 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/useroption"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="edu.westga.tamikowilliamsattendancerepairapp.UIActivity.CourseStatsActivity"
-    tools:showIn="@layout/activity_course_stats">
+    tools:context="edu.westga.tamikowilliamsattendancerepairapp.UIActivity.CourseStatsActivity">
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -19,10 +15,10 @@
         android:text="@string/selectedStatsTxt"
         android:id="@+id/selectStatsTxt"
         android:textColor="#84970e"
-        android:textSize="22dp"
-        android:layout_marginTop="23dp"
+        android:textSize="23dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -48,7 +44,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="10dp"
-        android:textColorLink="15"
         android:textSize="15dp" />
 
     <TextView
@@ -94,7 +89,7 @@
         android:layout_below="@+id/selectStatsTxt"
         android:layout_alignParentRight="true"
         android:layout_alignBottom="@id/studentHead"
-        android:textSize="18dp" />
+        android:textSize="15dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -104,7 +99,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignBottom="@id/courseHead"
         android:hint="course name"
-        android:textSize="20dp" />
+        android:textSize="18dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -140,8 +135,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Each Student Detail"
-        android:id="@+id/headingList"
-        android:layout_below="@+id/absentVal" />
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/absentHead"
+        android:id="@+id/headingList"/>
 
     <ListView
         android:layout_width="match_parent"
@@ -152,4 +148,3 @@
         android:id="@+id/listCourseStats"/>
 
 </RelativeLayout>
-
