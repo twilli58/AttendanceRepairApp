@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="edu.westga.tamikowilliamsattendancerepairapp.UIActivity.StudentActivity"
+    tools:showIn="@layout/activity_student">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:layout_weight="0.56"
+        android:layout_marginTop="50dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:paddingLeft="15dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Student ID"
+                android:id="@+id/studentId" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:paddingLeft="25dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Not Assigned"
+                android:id="@+id/studentIdVal" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="19dp"
+                android:paddingRight="5dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Last Name:"
+                android:id="@+id/lastNameTxt" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:paddingRight="20dp"
+                android:id="@+id/lastEdit"
+                android:layout_column="1" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingLeft="19dp"
+                android:paddingRight="5dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="First Name:"
+                android:id="@+id/firstNameTxt" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingLeft="19dp"
+                android:paddingRight="5dp"
+                android:id="@+id/firstEdit"
+                android:layout_column="1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </TableRow>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_height="32dp"
+            android:weightSum="1">
+
+            <Button
+                android:layout_width="78dp"
+                android:layout_height="wrap_content"
+                android:text="@string/findStudentBtn"
+                android:id="@+id/findStudentBtn"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#ffffff"
+                android:background="#84970e"
+                android:textSize="18dp"
+                android:onClick="findStudent" />
+
+            <Button
+                android:layout_width="76dp"
+                android:layout_height="wrap_content"
+                android:text="@string/addStudentBtn"
+                android:id="@+id/newStudentBtn"
+                android:textColor="#ffffff"
+                android:background="#84970e"
+                android:textSize="18dp"
+                android:onClick="newStudent" />
+
+            <Button
+                android:layout_width="76dp"
+                android:layout_height="wrap_content"
+                android:text="@string/editStudentBtn"
+                android:id="@+id/editStudentBtn"
+                android:layout_marginLeft="10dp"
+                android:textColor="#ffffff"
+                android:background="#84970e"
+                android:textSize="18dp"
+                android:onClick="editStudent" />
+
+            <Button
+                android:layout_width="76dp"
+                android:layout_height="wrap_content"
+                android:text="@string/deleteStudentBtn"
+                android:id="@+id/deleteStudentBtn"
+                android:layout_marginLeft="10dp"
+                android:textColor="#ffffff"
+                android:background="#84970e"
+                android:textSize="18dp"
+                android:onClick="removeStudent" />
+
+
+        </LinearLayout>
+
+    </TableLayout>
+
+</LinearLayout>

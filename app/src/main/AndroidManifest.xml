@@ -18,6 +18,38 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".UIActivity.ChooseActivity"
+            android:label="@string/title_activity_choose"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UIActivity.CourseActvity"
+            android:label="@string/title_activity_course_actvity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UIActivity.CourseActivity"
+            android:label="@string/title_activity_course"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UIActivity.CourseEditActivity"
+            android:label="@string/title_activity_course_edit"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UIActivity.CoursePortalActivity"
+            android:label="@string/title_activity_course_portal"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UIActivity.CourseStatsActivity"
+            android:label="@string/title_activity_course_stats"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UIActivity.CourseStudentListActivity"
+            android:label="@string/title_activity_course_student_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UIActivity.StudentActivity"
+            android:label="@string/title_activity_student"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

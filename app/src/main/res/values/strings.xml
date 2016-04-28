@@ -1,4 +1,75 @@
 <resources>
     <string name="app_name">TamikoWilliamsAttendanceRepairApp</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_choose">ChooseActivity</string>
+    <string name="title_activity_user_options">UserOptionsActivity</string>
+    <string name="classBtn">My Classes</string>
+    <string name="rollBtn">Roll Call</string>
+    <string name="manageBtn">Manage</string>
+    <string name="enterBtn">Enter</string>
+    <string name="statBtn">Stats</string>
+    <string name="welcomeTxt">Welcome</string>
+    <string name="title_activity_student_search">StudentSearchActivity</string>
+    <string name="nameSearchEditText">Student Name</string>
+    <string name="title_activity_student_list">StudentListActivity</string>
+    <string name="searchBtn">Go</string>
+    <string name="nameSearch">Search Students or Course</string>
+    <string name="searchTxt">Search Stats</string>
+    <string name="newStudentTxt">click here to add a new student</string>
+    <string name="title_activity_database">DatabaseActivity</string>
+    <string name="newCourseBtn">Add New Course</string>
+    <string name="editStudentBtn">Edit</string>
+    <string name="findStudentBtn">Find</string>
+    <string name="addStudentBtn">Add</string>
+    <string name="deleteStudentBtn">Delete</string>
+    <string name="chooseTxt">Choose one</string>
+    <string name="studentChooseBtn">Student</string>
+    <string name="courseChooseBtn">Course</string>
+    <string name="title_activity_course_portal">CoursePortalActivity</string>
+    <string name="selectedCourseTxt">Courses</string>
+    <string name="selectCourseBtn">Select</string>
+    <string name="course_prompt">Choose a course</string>
+    <string name="selectedStatsTxt">View Student Stats</string>
+    <string name="selectStatsBtn">Go</string>
+    <string name="title_activity_student_stats">StudentStatsActivity</string>
+    <string name="title_activity_course_stats">CourseStatsActivity</string>
+    <string name="courseNameTxt">Course Name</string>
+    <string name="title_activity_course_edit">CourseEditActivity</string>
+    <string name="title_activity_course">CourseActivity</string>
+    <string name="findCourseBtn">find</string>
+    <string name="addCourseBtn">add</string>
+    <string name="editCourseBtn">edit</string>
+    <string name="deleteCourseBtn">delete</string>
+    <string name="lastNameStudentCourseRollCall">Last Name</string>
+    <string name="firstNameStudentCourseRollCall">First Name</string>
+
+    <string-array name="course_arrays">
+        <item>Select One</item>
+        <item>Math</item>
+        <item>Art</item>
+        <item>History</item>
+        <item>English</item>
+        <item>Science</item>
+        <item>Spanish</item>
+        <item>Language</item>
+    </string-array>
+
+    <string-array name="month_arrays">
+        <item>Select One</item>
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+    <string name="title_activity_course_actvity">CourseActvity</string>
+    <string name="title_activity_course_student_list">CourseStudentListActivity</string>
+    <string name="title_activity_student">StudentActivity</string>
 </resources>
