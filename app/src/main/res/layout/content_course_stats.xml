@@ -17,9 +17,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/selectedStatsTxt"
-        android:id="@+id/selectStatsTxt"
-        android:textColor="#84970e"
-        android:textSize="22dp"
+        android:id="@+id/selectStatsTxt2"
+        android:textColor="#1a1919"
+        android:textSize="20dp"
         android:layout_marginTop="23dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -31,7 +31,7 @@
         android:layout_marginBottom="10dp"
         android:text="Student:"
         android:id="@+id/studentHead"
-        android:layout_below="@+id/selectStatsTxt"
+        android:layout_below="@+id/selectStatsTxt2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="10dp"
@@ -48,7 +48,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="10dp"
-        android:textColorLink="15"
         android:textSize="15dp" />
 
     <TextView
@@ -90,11 +89,12 @@
         android:layout_marginTop="5dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Student Name"
+        android:paddingRight="20dp"
         android:id="@+id/studentVal"
-        android:layout_below="@+id/selectStatsTxt"
+        android:layout_below="@+id/selectStatsTxt2"
         android:layout_alignParentRight="true"
         android:layout_alignBottom="@id/studentHead"
-        android:textSize="18dp" />
+        android:textSize="15dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -104,7 +104,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignBottom="@id/courseHead"
         android:hint="course name"
-        android:textSize="20dp" />
+        android:textSize="15dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -112,6 +112,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Month:"
         android:id="@+id/monthVal"
+        android:paddingRight="20dp"
         android:layout_alignParentRight="true"
         android:layout_alignBottom="@id/monthHead"
         android:textSize="15dp" />
@@ -121,6 +122,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Month:"
+        android:paddingRight="20dp"
         android:id="@+id/presentVal"
         android:layout_alignParentRight="true"
         android:layout_alignBottom="@id/presentHead"
@@ -131,6 +133,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Month:"
+        android:paddingRight="20dp"
         android:id="@+id/absentVal"
         android:layout_alignParentRight="true"
         android:layout_alignBottom="@id/absentHead"
