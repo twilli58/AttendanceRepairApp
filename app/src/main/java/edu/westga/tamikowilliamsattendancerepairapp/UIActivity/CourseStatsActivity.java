@@ -101,7 +101,7 @@ public class CourseStatsActivity extends AppCompatActivity {
 
     public void showStatsOfCourseInMonth() {
         students = Course.getStudents(this, course_id);
-        all = Attendance.getCourseStatsByMonth(this, course_id, month);
+        all = Attendance.getCourseStatsByMonth(this, month, course_id);
 
         for(int i=0; i<students.size()/2; ++i) {
             int id = Student.findStudent(this, students.get(2 * i + 1), students.get(2 * i));

@@ -56,7 +56,7 @@ public class StudentStatsActivity extends AppCompatActivity {
                 all = Attendance.getStudentStats(this, student_id);
             } else {
                 monthVal.setText(Attendance.getMonthName(month));
-                all = Attendance.getCourseStatsByMonth(this, student_id, month);
+                all = Attendance.getStudentStatsByMonth(this, student_id, month);
             }
         } else {
             courseVal.setText(Course.findCourseName(this, course_id));
