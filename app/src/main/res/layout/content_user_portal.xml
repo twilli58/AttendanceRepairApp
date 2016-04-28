@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="edu.westga.tamikowilliamsattendancerepairapp.UIActivity.UserPortalActivity"
+    tools:showIn="@layout/activity_user_portal">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+
+        android:weightSum="1"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center_vertical">
+
+        <Button
+            android:layout_width="155dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/manageBtn"
+            android:id="@+id/manageBtn"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ffffff"
+            android:background="#84970e"
+            android:textSize="20sp"
+            android:onClick="click_Manage" />
+
+        <Button
+            android:layout_width="155dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/rollBtn"
+            android:id="@+id/rollBtn"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ffffff"
+            android:background="#84970e"
+            android:textSize="20sp"
+            android:onClick="click_RollCall" />
+
+        <Button
+            android:layout_width="155dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/statBtn"
+            android:id="@+id/statBtn"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ffffff"
+            android:background="#84970e"
+            android:textSize="20sp"
+            android:onClick="click_Stats" />
+
+    </LinearLayout>
+
+</LinearLayout>
