@@ -12,4 +12,135 @@
     tools:context="edu.westga.tamikowilliamsattendancerepairapp.UIActivity.CourseStatsActivity"
     tools:showIn="@layout/activity_course_stats">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/selectedStatsTxt"
+        android:id="@+id/selectStatsTxt"
+        android:textColor="#84970e"
+        android:textSize="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_marginBottom="10dp"
+        android:text="Student:"
+        android:id="@+id/studentHead"
+        android:layout_below="@+id/selectStatsTxt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_marginBottom="10dp"
+        android:text="Course:"
+        android:id="@+id/courseHead"
+        android:layout_below="@+id/studentHead"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Month:"
+        android:id="@+id/monthHead"
+        android:layout_below="@+id/courseHead"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Presents:"
+        android:id="@+id/presentHead"
+        android:layout_below="@+id/monthHead"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Absents:"
+        android:id="@+id/absentHead"
+        android:layout_below="@+id/presentHead"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Student Name"
+        android:id="@+id/studentVal"
+        android:layout_below="@+id/selectStatsTxt"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@id/studentHead"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Course Name"
+        android:id="@+id/courseVal"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@id/courseHead"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Month:"
+        android:id="@+id/monthVal"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@id/monthHead"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Month:"
+        android:id="@+id/presentVal"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@id/presentHead"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Month:"
+        android:id="@+id/absentVal"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@id/absentHead"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Each Student Detail"
+        android:layout_below="@id/absentHead"
+        android:id="@+id/headingList"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@null"
+        android:layout_below="@id/headingList"
+        android:id="@+id/listCourseStats"/>
+
 </RelativeLayout>
+

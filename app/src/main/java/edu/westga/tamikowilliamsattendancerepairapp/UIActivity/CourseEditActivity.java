@@ -25,7 +25,7 @@ import edu.westga.tamikowilliamsattendancerepairapp.Model.Student;
 import edu.westga.tamikowilliamsattendancerepairapp.R;
 
 public class CourseEditActivity extends AppCompatActivity {
-    EditText nameView;
+    TextView nameView;
     TextView idView;
     ListView listView;
 
@@ -46,7 +46,7 @@ public class CourseEditActivity extends AppCompatActivity {
 
         lastNameStudentView = (EditText) findViewById(R.id.lastNameStudentCourseEdit);
         firstNameStudentView = (EditText) findViewById(R.id.firstNameStudentCourseEdit);
-        nameView = (EditText) findViewById(R.id.nameEditText);
+        nameView = (TextView) findViewById(R.id.nameEditText);
         idView = (TextView) findViewById(R.id.idEditText);
 
         Bundle bundle = getIntent().getExtras();
