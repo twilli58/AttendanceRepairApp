@@ -92,9 +92,9 @@ public class DBAdapter {
         }
         cursor.close();
 
-        if (!ret) {
-            cursor = db.rawQuery("SELECT " + DBContract.Student._ID + " FROM " + Student.TABLE_NAME
-                            + " WHERE " + DBContract.Student.FIRST_NAME + "=? AND " + Student.LAST_NAME
+        if(!ret) {
+            cursor = db.rawQuery("SELECT " + Student._ID + " FROM " + Student.TABLE_NAME
+                            + " WHERE " + Student.FIRST_NAME + "=? AND " + Student.LAST_NAME
                             + "=? AND " + Student.IS_ACTIVE + "=0",
                     new String[]{firstName, lastName});
             if (cursor.getCount() == 1) {
@@ -108,6 +108,19 @@ public class DBAdapter {
             }
             cursor.close();
         }
+        return ret;
+    }
+
+    public String findStudentName(int id) {
+        Cursor cursor = db.rawQuery("SELECT " + Student.LAST_NAME + ", " + Student.FIRST_NAME + " FROM " + Student.TABLE_NAME +
+                        " WHERE " + Student._ID + "=? AND " + Student.IS_ACTIVE + "=1",
+                new String[]{String.valueOf(id)});
+        String ret = "";
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            ret = cursor.getString(0) + cursor.getString(1);
+        }
+        cursor.close();
         return ret;
     }
 
@@ -154,7 +167,7 @@ public class DBAdapter {
         }
         cursor.close();
 
-        if (!ret) {
+        if(!ret) {
             cursor = db.rawQuery("SELECT " + Course._ID + " FROM " + Course.TABLE_NAME
                             + " WHERE " + Course.NAME + "=? AND " + Course.IS_ACTIVE + "=0",
                     new String[]{name});
@@ -222,7 +235,7 @@ public class DBAdapter {
         if (cursor.getCount() > 0) {
             ret = new ArrayList<>();
             cursor.moveToFirst();
-            for (int i = 0; i < cursor.getCount(); ++i) {
+            for(int i=0; i<cursor.getCount(); ++i) {
                 ret.add(cursor.getString(0));
                 ret.add(cursor.getString(1));
                 cursor.moveToNext();
@@ -262,7 +275,7 @@ public class DBAdapter {
         }
         cursor.close();
 
-        if (!ret) {
+        if(!ret) {
             cursor = db.rawQuery("SELECT " + Enroll._ID + " FROM " + Enroll.TABLE_NAME
                             + " WHERE " + Enroll.STUDENT + "=? AND " + Enroll.COURSE + "=? AND "
                             + Enroll.ACTIVE + "=0",
@@ -272,7 +285,7 @@ public class DBAdapter {
                 args.put(Enroll.ACTIVE, 1);
                 cursor.moveToFirst();
                 db.update(Enroll.TABLE_NAME, args, Enroll._ID + "=?",
-                        new String[]{String.valueOf(cursor.getLong(0))});
+                        new String[] {String.valueOf(cursor.getLong(0))});
                 ret = true;
             }
             cursor.close();
@@ -296,7 +309,7 @@ public class DBAdapter {
         }
         cursor.close();
 
-        if (ret == 0) {
+        if(ret == 0) {
             cursor = db.rawQuery("SELECT " + Enroll._ID + " FROM " + Enroll.TABLE_NAME
                             + " WHERE " + Enroll.STUDENT + "=? AND " + Enroll.COURSE + "=? AND "
                             + Enroll.ACTIVE + "=0",
@@ -318,7 +331,7 @@ public class DBAdapter {
         if (cursor.getCount() > 0) {
             ret = new ArrayList<>();
             cursor.moveToFirst();
-            for (int i = 0; i < cursor.getCount(); ++i) {
+            for(int i=0; i < cursor.getCount(); ++i) {
                 ret.add(cursor.getString(0));
                 cursor.moveToNext();
             }
@@ -338,7 +351,7 @@ public class DBAdapter {
             ContentValues args = new ContentValues();
             args.put(Enroll.ACTIVE, 0);
             cursor.moveToFirst();
-            ret = (int) cursor.getLong(0);
+            ret = (int)cursor.getLong(0);
         }
         cursor.close();
 
@@ -383,7 +396,7 @@ public class DBAdapter {
         Cursor cursor = db.rawQuery("SELECT *  FROM " + Student.TABLE_NAME, null);
         if (cursor.getCount() > 0) {
             cursor.moveToFirst();
-            for (int i = 0; i < cursor.getCount(); ++i) {
+            for(int i=0; i<cursor.getCount(); ++i) {
                 Log.e("Miko: Student: ", "ID: " + String.valueOf(cursor.getLong(0))
                         + " F: " + cursor.getString(1)
                         + " L: " + cursor.getString(2)
@@ -396,7 +409,7 @@ public class DBAdapter {
         cursor = db.rawQuery("SELECT *  FROM " + Course.TABLE_NAME, null);
         if (cursor.getCount() > 0) {
             cursor.moveToFirst();
-            for (int i = 0; i < cursor.getCount(); ++i) {
+            for(int i=0; i<cursor.getCount(); ++i) {
                 Log.e("Miko: Course: ", "ID: " + String.valueOf(cursor.getLong(0)) + " N: " + cursor.getString(1)
                         + " " + String.valueOf(cursor.getInt(2)));
                 cursor.moveToNext();
@@ -407,7 +420,7 @@ public class DBAdapter {
         cursor = db.rawQuery("SELECT *  FROM " + Enroll.TABLE_NAME, null);
         if (cursor.getCount() > 0) {
             cursor.moveToFirst();
-            for (int i = 0; i < cursor.getCount(); ++i) {
+            for(int i=0; i<cursor.getCount(); ++i) {
                 Log.e("Miko: Enroll: ", "ID: " + String.valueOf(cursor.getLong(0))
                         + " S: " + String.valueOf(cursor.getInt(1))
                         + " C: " + String.valueOf(cursor.getInt(2))
@@ -420,7 +433,7 @@ public class DBAdapter {
         cursor = db.rawQuery("SELECT *  FROM " + Attendance.TABLE_NAME, null);
         if (cursor.getCount() > 0) {
             cursor.moveToFirst();
-            for (int i = 0; i < cursor.getCount(); ++i) {
+            for(int i=0; i<cursor.getCount(); ++i) {
                 Log.e("Miko: Attendance: ", "ID: " + String.valueOf(cursor.getLong(0))
                         + " D: " + cursor.getString(1)
                         + " P: " + String.valueOf(cursor.getInt(2))
@@ -431,5 +444,165 @@ public class DBAdapter {
         } else Log.e("Miko: Attendance: ", "No data yet");
         cursor.close();
     }
-}
 
+    public ArrayList<Integer> statsStudent(int id) {
+        Cursor cursor = db.rawQuery("SELECT " + Attendance.PRESENT
+                        + " FROM " + Attendance.TABLE_NAME + ", " + Enroll.TABLE_NAME
+                        + " WHERE " + Enroll.TABLE_NAME + "." + Enroll._ID + "="
+                        + Attendance.TABLE_NAME + "." + Attendance.ENROLL
+                        + " AND " + Enroll.TABLE_NAME + "." + Enroll.STUDENT + "=?",
+                new String[]{String.valueOf(id)});
+        ArrayList<Integer> ret = new ArrayList<>();
+        int presents = 0, absents = 0;
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            for(int i=0; i<cursor.getCount(); ++i) {
+                if(cursor.getInt(0) == 1) {
+                    ++presents;
+                } else ++ absents;
+                cursor.moveToNext();
+            }
+        }
+        ret.add(presents);
+        ret.add(absents);
+        cursor.close();
+        return ret;
+    }
+
+    public ArrayList<Integer> statsStudentByMonth(int id, int month) {
+        String monthStr;
+        if (month < 10) {
+            monthStr = "0" + String.valueOf(month);
+        } else monthStr = String.valueOf(month);
+        Cursor cursor = db.rawQuery("SELECT " + Attendance.PRESENT
+                        + " FROM " + Attendance.TABLE_NAME + ", " + Enroll.TABLE_NAME
+                        + " WHERE " + Enroll.TABLE_NAME + "." + Enroll._ID + "="
+                        + Attendance.TABLE_NAME + "." + Attendance.ENROLL
+                        + " AND " + Enroll.TABLE_NAME + "." + Enroll.STUDENT + "=? AND "
+                        + "strftime('%m', " + Attendance.TABLE_NAME + "." + Attendance.DATE + ") =?",
+                new String[]{String.valueOf(id), monthStr});
+        ArrayList<Integer> ret = new ArrayList<>();
+        int presents = 0, absents = 0;
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            for(int i=0; i<cursor.getCount(); ++i) {
+                if(cursor.getInt(0) == 1) {
+                    ++presents;
+                } else ++ absents;
+                cursor.moveToNext();
+            }
+        }
+        ret.add(presents);
+        ret.add(absents);
+        cursor.close();
+        return ret;
+    }
+
+    public ArrayList<Integer> statsStudentByCourse(int id, int course) {
+        Cursor cursor = db.rawQuery("SELECT " + Attendance.PRESENT
+                        + " FROM " + Attendance.TABLE_NAME + ", " + Enroll.TABLE_NAME
+                        + " WHERE " + Enroll.TABLE_NAME + "." + Enroll._ID + "="
+                        + Attendance.TABLE_NAME + "." + Attendance.ENROLL
+                        + " AND " + Enroll.TABLE_NAME + "." + Enroll.STUDENT + "=? AND "
+                        + Enroll.TABLE_NAME + "." + Enroll.COURSE + "=?",
+                new String[]{String.valueOf(id), String.valueOf(course)});
+        ArrayList<Integer> ret = new ArrayList<>();
+        int presents = 0, absents = 0;
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            for(int i=0; i<cursor.getCount(); ++i) {
+                if(cursor.getInt(0) == 1) {
+                    ++presents;
+                } else ++ absents;
+                cursor.moveToNext();
+            }
+        }
+        ret.add(presents);
+        ret.add(absents);
+        cursor.close();
+        return ret;
+    }
+
+    public ArrayList<Integer> statsStudentByMonthAndCourse(int id, int month, int course) {
+        String monthStr;
+        if (month < 10) {
+            monthStr = "0" + String.valueOf(month);
+        } else monthStr = String.valueOf(month);
+        Cursor cursor = db.rawQuery("SELECT " + Attendance.PRESENT
+                        + " FROM " + Attendance.TABLE_NAME + ", " + Enroll.TABLE_NAME
+                        + " WHERE " + Enroll.TABLE_NAME + "." + Enroll._ID + "="
+                        + Attendance.TABLE_NAME + "." + Attendance.ENROLL
+                        + " AND " + Enroll.TABLE_NAME + "." + Enroll.STUDENT + "=? AND "
+                        + Enroll.TABLE_NAME + "." + Enroll.COURSE + "=? AND "
+                        + "strftime('%m', " + Attendance.TABLE_NAME + "." + Attendance.DATE + ") =?",
+                new String[]{String.valueOf(id), String.valueOf(course), monthStr});
+        ArrayList<Integer> ret = new ArrayList<>();
+        int presents = 0, absents = 0;
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            for(int i=0; i<cursor.getCount(); ++i) {
+                if(cursor.getInt(0) == 1) {
+                    ++presents;
+                } else ++ absents;
+                cursor.moveToNext();
+            }
+        }
+        ret.add(presents);
+        ret.add(absents);
+        cursor.close();
+        return ret;
+    }
+
+    public ArrayList<Integer> statsCourse(int id) {
+        Cursor cursor = db.rawQuery("SELECT " + Attendance.PRESENT
+                        + " FROM " + Attendance.TABLE_NAME + ", " + Enroll.TABLE_NAME
+                        + " WHERE " + Enroll.TABLE_NAME + "." + Enroll._ID + "="
+                        + Attendance.TABLE_NAME + "." + Attendance.ENROLL
+                        + " AND " + Enroll.TABLE_NAME + "." + Enroll.COURSE + "=?",
+                new String[]{String.valueOf(id)});
+        ArrayList<Integer> ret = new ArrayList<>();
+        int presents = 0, absents = 0;
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            for(int i=0; i<cursor.getCount(); ++i) {
+                if(cursor.getInt(0) == 1) {
+                    ++presents;
+                } else ++ absents;
+                cursor.moveToNext();
+            }
+        }
+        ret.add(presents);
+        ret.add(absents);
+        cursor.close();
+        return ret;
+    }
+
+    public ArrayList<Integer> statsCourseByMonth(int id, int month) {
+        String monthStr;
+        if (month < 10) {
+            monthStr = "0" + String.valueOf(month);
+        } else monthStr = String.valueOf(month);
+        Cursor cursor = db.rawQuery("SELECT " + Attendance.PRESENT
+                        + " FROM " + Attendance.TABLE_NAME + ", " + Enroll.TABLE_NAME
+                        + " WHERE " + Enroll.TABLE_NAME + "." + Enroll._ID + "="
+                        + Attendance.TABLE_NAME + "." + Attendance.ENROLL
+                        + " AND " + Enroll.TABLE_NAME + "." + Enroll.COURSE + "=? AND "
+                        + "strftime('%m', " + Attendance.TABLE_NAME + "." + Attendance.DATE + ") =?",
+                new String[]{String.valueOf(id), monthStr});
+        ArrayList<Integer> ret = new ArrayList<>();
+        int presents = 0, absents = 0;
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            for(int i=0; i<cursor.getCount(); ++i) {
+                if(cursor.getInt(0) == 1) {
+                    ++presents;
+                } else ++ absents;
+                cursor.moveToNext();
+            }
+        }
+        ret.add(presents);
+        ret.add(absents);
+        cursor.close();
+        return ret;
+    }
+}

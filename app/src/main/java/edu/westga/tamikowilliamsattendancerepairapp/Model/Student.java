@@ -29,6 +29,20 @@ public class Student {
         return ret;
     }
 
+    public static String findStudentName(Context context, int id) {
+        DBAdapter dba = new DBAdapter(context);
+        String ret = null;
+        try {
+            dba.open();
+            ret = dba.findStudentName(id);
+            dba.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return ret;
+    }
+
     public static int findStudent(Context context, String firstName, String lastName) {
         DBAdapter dba = new DBAdapter(context);
         int ret = -1;
